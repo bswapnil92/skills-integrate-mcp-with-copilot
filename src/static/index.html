@@ -22,24 +22,52 @@
       </section>
 
       <section id="signup-container">
-        <h3>Sign Up for an Activity</h3>
-        <form id="signup-form">
-          <div class="form-group">
-            <label for="email">Student Email:</label>
-            <input type="email" id="email" required placeholder="your-email@mergington.edu" />
-          </div>
-          <div class="form-group">
-            <label for="activity">Select Activity:</label>
-            <select id="activity" required>
-              <option value="">-- Select an activity --</option>
-              <!-- Activity options will be loaded here -->
-            </select>
-          </div>
-          <button type="submit">Sign Up</button>
-        </form>
+        <div class="teacher-header">
+          <h3>Teacher Access</h3>
+          <button id="login-button" type="button" class="secondary-button">🔐 Login</button>
+          <button id="logout-button" type="button" class="secondary-button hidden">Logout</button>
+        </div>
+        <p id="teacher-status">Teacher login required to manage registrations.</p>
+
+        <div id="signup-section" class="hidden">
+          <h3>Sign Up for an Activity</h3>
+          <form id="signup-form">
+            <div class="form-group">
+              <label for="email">Student Email:</label>
+              <input type="email" id="email" required placeholder="your-email@mergington.edu" />
+            </div>
+            <div class="form-group">
+              <label for="activity">Select Activity:</label>
+              <select id="activity" required>
+                <option value="">-- Select an activity --</option>
+                <!-- Activity options will be loaded here -->
+              </select>
+            </div>
+            <button type="submit">Sign Up</button>
+          </form>
+        </div>
+
         <div id="message" class="hidden"></div>
       </section>
     </main>
+
+    <div id="login-modal" class="modal hidden" aria-modal="true" role="dialog">
+      <div class="modal-content">
+        <span id="close-login-modal" class="close-button" aria-label="Close">&times;</span>
+        <h3>Teacher Login</h3>
+        <form id="login-form">
+          <div class="form-group">
+            <label for="teacher-username">Username:</label>
+            <input id="teacher-username" type="text" required placeholder="teacher@mergington.edu" />
+          </div>
+          <div class="form-group">
+            <label for="teacher-password">Password:</label>
+            <input id="teacher-password" type="password" required placeholder="Enter password" />
+          </div>
+          <button type="submit">Login</button>
+        </form>
+      </div>
+    </div>
 
     <footer>
       <p>&copy; 2026 Mergington High School</p>
